@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+public class LevelSelector
+{
+    public int selectedLevel;
+    public int easy = 0, medium = 1, hard = 2;
+
+
+
+    public void Select(int selectedLevel)
+    {
+        Console.WriteLine("Enter level difficulty, 0 for easy, 1 for meadium, and 2 for hard:");
+        selectedLevel = Int32.Parse(Console.ReadLine());
+
+        switch (selectedLevel)
+        {
+            case 0:
+                Console.Write("Easy");
+                Console.ReadLine();
+                break;
+            case 1:
+                Console.WriteLine("Medium");
+                Console.ReadLine();
+                break;
+            case 2:
+                Console.WriteLine("Hard");
+                Console.ReadLine();
+                break;
+        }
+    }
+
+
+    static void Main(string[] args)
+    {
+        LevelSelector levelselector = new LevelSelector();
+        levelselector.Select(levelselector.selectedLevel);
+
+    }
+
+}
