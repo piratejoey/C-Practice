@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+
+
+public class QuizArray
+{
+    //decalare float array, length of 5
+    public float[] quiz = new float[5];
+    //create new instance of Random
+    Random rnd = new Random();
+    double sum = 0;
+
+
+
+    public void count()
+    {
+        foreach (float var in quiz)
+        {
+            //Random.NextDouble() takes no parameters and creates a number between 0 and 1.0, times 100 and rounded to 2 digits
+            Double temp = Math.Round(rnd.NextDouble()*100,2);
+            Console.WriteLine(temp);
+            //add randomized number to the total
+            sum += temp;
+        }
+        Console.ReadLine();
+        //convert answer to float explicitly(not needed since we are rounding to 2 digits anyway)
+        float answer = (float)Math.Round((sum / 5f),2);
+        Console.WriteLine(answer);
+        Console.ReadLine();
+    }
+
+    static void Main(string[] args)
+    {
+        //create instance of class to call in Main
+        QuizArray quizarray = new QuizArray();
+        quizarray.count();
+
+    }
+
+}
