@@ -29,19 +29,25 @@ class WebSearch
 
     void SearchGoogle(string search)
     {
-        //create instance from ProcessStartInfo class
-        ProcessStartInfo startInfo = new ProcessStartInfo();
-        //specify program to open file with
-        startInfo.FileName = "CHROME.EXE";
-        //allows you not to flash the console window
-        startInfo.CreateNoWindow = false;
+        
+        ProcessStartInfo startInfo = new ProcessStartInfo(); //create instance from ProcessStartInfo class
+        
+        startInfo.FileName = "CHROME.EXE"; //specify program to open file with
+        
+        startInfo.CreateNoWindow = false; //allows you not to flash the console window
         startInfo.UseShellExecute = true;
-        //allows you to set window as hidden if the application allows
-        startInfo.WindowStyle = ProcessWindowStyle.Hidden;
-        //thing to open(website, filename, etc)
-        startInfo.Arguments = ("http://google.com/search?q=" + search);
-        //open the file with properties set by startInfo
-        Process.Start(startInfo);
+        
+        
+        startInfo.WindowStyle = ProcessWindowStyle.Hidden; //allows you to set window as hidden if the application allows
+        
+        startInfo.Arguments = ("http://google.com/search?q=" + search); //thing to open(website, filename, etc)
+        
+        Process.Start(startInfo); //open the file with properties set by startInfo
+        
+        //to run the child process in the parent's console window
+        UseShellExecute = false
+        startInfo.UseShellExecute = false; // causes consoles to share window 
+        Process processChild = Process.Start(info); 
 
     }
 }
