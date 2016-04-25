@@ -12,24 +12,16 @@ class WebSearch
 
     static void Main(string[] args)
     {
-        //instantiate class
-        WebSearch websearch = new WebSearch();
+        WebSearch websearch = new WebSearch(); //instantiate class
 
-        //prompt user input
-        Console.Write("What do you want to search? ");
+        Console.Write("What do you want to search? "); //prompt user input
         string search = Console.ReadLine();
-
-        //call method to search by input
-        websearch.SearchGoogle(search);
-
-       
-
-
+        
+        websearch.SearchGoogle(search); //call method to search by input
     }
 
     void SearchGoogle(string search)
     {
-        
         ProcessStartInfo startInfo = new ProcessStartInfo(); //create instance from ProcessStartInfo class
         
         startInfo.FileName = "CHROME.EXE"; //specify program to open file with
