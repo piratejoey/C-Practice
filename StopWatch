@@ -1,0 +1,66 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Diagnostics;
+
+namespace ConsoleApplication6
+{
+    class Program
+    {
+
+
+        static void Main(string[] args)
+        {
+            const string value = "the dog is yellow the rain in spain falls mainly in the plans";
+            string target1 = "";
+            int count = 0;
+
+            
+            while (true)
+            {
+                Console.Write("What word do I check the text for? ");
+                target1 = Console.ReadLine();
+
+                //create instance starting stopwatch
+                Stopwatch timer = Stopwatch.StartNew();
+           
+
+                string target = target1.ToLower();
+                
+                
+                
+
+                if (value.IndexOf(target) != -1)
+                {
+                    Console.WriteLine("string contains word \"{0}\"", target);
+                    
+                }
+                else if(target == "exit")
+                {
+                    //stop stopwatch
+                    timer.Stop();
+                    //create instance of TimeSpan that contains the elapsed time, then print it to the console
+                    TimeSpan time = timer.Elapsed;
+                    Console.WriteLine("Time Elapsed {0}", time);
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("string does not contain \"{0}\"", target);
+                }
+                count++;
+                Console.WriteLine("You have checked {0} words", count);
+                
+            }
+
+            Console.WriteLine("Press <Enter> to exit program");
+            
+            Console.ReadLine();
+
+
+        }
+
+        }
+    }
