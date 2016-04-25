@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Diagnostics;
+
+class WebSearch
+{
+
+
+    static void Main(string[] args)
+    {
+        WebSearch websearch = new WebSearch();
+
+        Console.Write("What do you want to search? ");
+        string search = Console.ReadLine();
+
+        websearch.SearchGoogle(search);
+
+
+    }
+
+    void SearchGoogle(string search)
+    {
+        Process.Start("http://google.com/search?q=" + search);
+    }
+}
