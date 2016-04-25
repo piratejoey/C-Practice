@@ -1,3 +1,4 @@
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,18 +12,36 @@ class WebSearch
 
     static void Main(string[] args)
     {
+        //instantiate class
         WebSearch websearch = new WebSearch();
 
+        //prompt user input
         Console.Write("What do you want to search? ");
         string search = Console.ReadLine();
 
+        //call method to search by input
         websearch.SearchGoogle(search);
+
+       
 
 
     }
 
     void SearchGoogle(string search)
     {
-        Process.Start("http://google.com/search?q=" + search);
+        //create instance from ProcessStartInfo class
+        ProcessStartInfo startInfo = new ProcessStartInfo();
+        //specify program to open file with
+        startInfo.FileName = "CHROME.EXE";
+        //allows you not to flash the console window
+        startInfo.CreateNoWindow = false;
+        startInfo.UseShellExecute = true;
+        //allows you to set window as hidden if the application allows
+        startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+        //thing to open(website, filename, etc)
+        startInfo.Arguments = ("http://google.com/search?q=" + search);
+        //open the file with properties set by startInfo
+        Process.Start(startInfo);
+
     }
 }
