@@ -8,10 +8,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        ConsoleKeyInfo key = Console.ReadKey();
+        ConsoleKeyInfo key = Console.ReadKey(); //describes key pressed, including modifier key pressed with it
         Console.WriteLine();
-        Console.WriteLine("Character entered: " + key.KeyChar);
-        Console.WriteLine("Special keys: " + key.Modifiers);
+        Console.WriteLine("Character entered: " + key.KeyChar); //gets unicode character from ConsoleKeyInfo
+        Console.WriteLine("Special keys: " + key.Modifiers); //gets modifer key from ConsoleKeyInfo
         Console.ReadLine();
         
     }
