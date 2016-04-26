@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        string global = null; //created null variable so it could be called as while conditional, unable to use local one created within loop
+
+        while (global != "exit")
+        {
+            Console.WriteLine("Input an integer to receive the square. Type 'exit' to quit");
+            string str = Console.ReadLine();
+            int value;
+            global = str;
+
+
+            bool success = int.TryParse(str, out value); //try to convert str to int, output value. success variable stores whether it was successfull in a boolean.
+
+            //(bool ? (if true) : (if false)
+            Console.WriteLine(success ? "Square of {0} is :" +
+                value * value
+                : "Invalid integer.", value);
+        }
+    }
+}
