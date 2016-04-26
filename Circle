@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+public class Program
+{
+
+    public double Radius(double input)
+    {
+        double radius = input;
+        return radius;
+    }
+    public double Perimeter(double radius)
+    {
+        double perimeter = (radius * 2) * 3.14;
+        return perimeter;
+    }
+
+    public double Area(double radius)
+    {
+        double area = 3.14 * (radius * radius);
+        return area;
+    }
+
+    static void Main(string[] args)
+    {
+        Program program = new Program();
+
+        string input1 = Console.ReadLine();
+        double input = double.Parse(input1);
+
+        Console.WriteLine("radius = " + program.Radius(input));
+        Console.WriteLine("area = " + program.Area(program.Radius(input)));
+        Console.WriteLine("perimeter = " + program.Perimeter(program.Radius(input)));
+        Console.ReadLine();
+        
+    }
+}
