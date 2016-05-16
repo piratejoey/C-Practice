@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string text = "Reverse this text";
+
+            char[] array = text.ToCharArray(); //convert text to character array
+
+            Array.Reverse(array); //reverse character array with built-in function
+
+            foreach (char character in array)
+            {
+                Console.Write(character); //output
+            }
+            Console.ReadLine();
+        }
+    }
